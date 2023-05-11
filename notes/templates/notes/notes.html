@@ -11,7 +11,6 @@
 <div class="flex flex-col gap-y-4 text-base text-blue-600">
     {% if output|default:"None" %}
         {% for note in output %}
-            <div>
                 <div>
                     <div class="font-bold text-xl">
                         {{ note.title }} :
@@ -19,8 +18,10 @@
                     <div>
                         {{ note.note }}
                     </div>
+                    <div>
+                        {{ note.pub_date}}
+                    </div>
                 </div>
-            </div>
         {% endfor %}
     {% endif %}
 </div>
