@@ -1,5 +1,6 @@
 from django.views.generic import ListView
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.template import loader
 from .models import Note
 
@@ -25,3 +26,8 @@ class NoteListsView(ListView):
     model = Note
     ordering = "-pub_date"
     context_object_name = "output"
+
+
+def PageNFView(request, exception):
+    print(request.build_absolute_uri())
+    return render(request, "404.html", {"url": request.build_absolute_uri()}, status=404)
