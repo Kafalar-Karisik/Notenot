@@ -2,6 +2,8 @@
 <html class="w-full h-full">
 
 <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'notes\style.css' %}">
     <meta charset="utf-8" lang="DE">
     <title>Notes</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,8 +23,11 @@
                     <div>
                         {{ note.pub_date}}
                     </div>
+                    <!-- {{ note.id }} -->
                 </div>
         {% endfor %}
+    {% else %}
+        No Data
     {% endif %}
 </div>
 </body>
