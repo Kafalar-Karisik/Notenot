@@ -1,8 +1,9 @@
 name: Django CI
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: "0 3 * * 0" # Jeder Sonntag um 03:00 UHR
+    - cron: "0 3 * * 0" # Her Pazar saat 3'te çalışacak
 
 jobs:
   build:
