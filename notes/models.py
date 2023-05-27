@@ -12,6 +12,7 @@ class Note(models.Model):
     note = models.CharField(max_length=500)
     pub_date = models.DateTimeField(auto_now_add=True)  # q.pub_date = datetime.datetime(YYYY, M, D, C, M, S, MSMSMS, \
     # tzinfo=datetime.timezone.utc)
+    last_modified = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title

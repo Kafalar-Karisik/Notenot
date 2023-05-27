@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Note Detail</title>
+    <link rel="stylesheet" href="{% static 'notes/style.css' %}">
+</head>
+<body>
+    <div class="notepad">
+        <h1>Note Detail</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" value="{{ note.title }}">
+            </div>
+            <div class="form-group">
+                <label for="note">Note:</label>
+                <textarea id="note" name="note">{{ note.note }}</textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn-save">Save</button>
+            </div>
+        </form>
+        <p class="last-modified"><strong>Last Modified:</strong> {{ note.last_modified }}</p>
+        <p class="pub-date"><strong>Publication Date:</strong> {{ note.pub_date }}</p>
+    </div>
+</body>
+</html>
